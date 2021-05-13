@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('task', [TaskController::class, 'task']);
 
 //to display all routes 
 Route::group(['middleware'=>'web'], function(){
@@ -72,7 +73,7 @@ Route::get('/', function(){
 
 });
 
-Route::delete('/task/{task}', function ($id){
+Route::delete('/task/{task}', function (Task $task){
 
     $task->delete();
     return redirect('/');

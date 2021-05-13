@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 class TaskController extends Controller
 {
@@ -13,9 +15,33 @@ class TaskController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construc(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
+
+        // $tasks = App\Task\::latest()-->paginate(5);//there will be 5 tasks displayed in one page
+
+        // return view('index', compact('task'))->with('i', (request()->input('page', 1)-1)*5);
+        //pager
+
+        // return view::make('blog')
+        // ->with(compact('member'))
+        // ->with(compact('tasklist'));
+       
+
+        // $AS="A"; 
+        // $OR = "B"; 
+        // $KR="C";
+
+        // $stats = compact("AS","OR", "KR");
+
+        // print_r($stats);
+
     }
 
     /**
